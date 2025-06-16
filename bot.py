@@ -15,6 +15,12 @@ slack_event_adapter= SlackEventAdapter( os.environ['SIGNING_SECRET'], '/slack/ev
 @slack_event_adapter.on("message")
 def message(payload):
     print(payload)
+    print("message")
+
+@slack_event_adapter.on("message.channels")
+def message(payload):
+    print(payload)
+    print("channels")
 
 client=slack.WebClient(token=os.environ['SLACK_TOKEN'])
 
