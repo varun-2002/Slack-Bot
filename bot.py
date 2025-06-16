@@ -12,7 +12,7 @@ app=Flask(__name__)
 
 slack_event_adapter= SlackEventAdapter( os.environ['SIGNING_SECRET'], '/slack/events',app )
 
-@slack_event_adapter("message")
+@slack_event_adapter.on("message")
 def message(payload):
     print(payload)
 
