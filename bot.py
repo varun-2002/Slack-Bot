@@ -7,7 +7,7 @@ from slackeventsapi import SlackEventAdapter
 
 env_path=Path('.')/'.env'
 load_dotenv(dotenv_path=env_path)
-
+message_counts = {}
 app=Flask(__name__)
 client=slack.WebClient(token=os.environ['SLACK_TOKEN'])
 BOT_ID = client.api_call("auth.test")['user_id']
