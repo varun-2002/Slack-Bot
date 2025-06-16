@@ -23,6 +23,7 @@ def message(payload):
     print("printing in the console")
     if user_id!= BOT_ID:
         client.chat_postMessage(channel="#test", text="Welcome to the Channel")
+        client.chat_postMessage(channel="#test", text=text)
 
 
 
