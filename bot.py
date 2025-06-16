@@ -20,6 +20,7 @@ def message(payload):
     channel_id = event.get('channel')
     user_id = event.get('user')
     text = event.get('text')
+    print("printing in the console")
     if user_id!= BOT_ID:
         client.chat_postMessage(channel="#test", text="Welcome to the Channel")
 
