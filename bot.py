@@ -28,7 +28,12 @@ def message(payload):
         else:
             message_counts[user_id] = 1
 
-        client.chat_postMessage(channel="#test", text=text)
+        #client.chat_postMessage(channel="#test", text=text)
+        client.chat_postEphemeral(
+            channel=channel_id,
+            user=user_id,
+            text="Thanks for the message"
+        )
 
 @ app.route('/message-count', methods=['POST'])
 def message_count():
